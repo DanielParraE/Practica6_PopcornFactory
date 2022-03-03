@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         btn_menu_enter.setOnClickListener {
             var intent: Intent = Intent(this, Menu::class.java)
-            print("ta raro")
             startActivity(intent)
         }
 
