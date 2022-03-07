@@ -3,11 +3,14 @@ package parra.daniel.popcornfactory
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import kotlinx.android.synthetic.main.activity_movie_details.*
 
 class MovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        getSupportActionBar()?.hide()
         setContentView(R.layout.activity_movie_details)
 
         val bundle = intent.extras
@@ -35,6 +38,8 @@ class MovieDetails : AppCompatActivity() {
 
                 intent.putExtra("id", id)
                 intent.putExtra("name", title)
+
+                this.startActivity(intent)
 
             }
         }
